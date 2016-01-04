@@ -16,24 +16,24 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">网站管理系统登录</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="login" method="post">
+                        <?php echo form_open('admin/login');?>
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="Username" type="input" autofocus>
+                                    <input class="form-control" placeholder="用户名" name="username" value="<?php echo set_value('username');?>" type="input" autofocus>&nbsp;<?php echo form_error('username');?>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="密码" name="password" type="password">&nbsp;<?php echo form_error('password');?>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        <input name="remember" type="checkbox" value="1">记住登录
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="" class="btn btn-lg btn-success btn-block">Login</a>
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="登录">
                             </fieldset>
                         </form>
                     </div>
