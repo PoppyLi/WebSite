@@ -21,12 +21,8 @@
                     <div class="panel-body">
                         <?php echo form_open('admin/login');?>
                             <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="用户名" name="username" value="<?php echo set_value('username');?>" type="input" autofocus>&nbsp;<?php echo form_error('username');?>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="密码" name="password" type="password">&nbsp;<?php echo form_error('password');?>
-                                </div>
+                                <div class="form-group hei30px"><input class="form-control" placeholder="用户名" name="username" value="<?php echo set_value('username');?>" type="input" autofocus>&nbsp;<?php echo form_error('username');?></div>
+                                <div class="form-group hei30px"><input class="form-control" placeholder="密码" name="password" type="password">&nbsp;<?php echo form_error('password');?></div>
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="1">记住登录

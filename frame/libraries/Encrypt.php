@@ -476,5 +476,36 @@ class CI_Encrypt {
 	{
 		return hash($this->_hash_type, $str);
 	}
+	
+	
+	// --------------------------------------------------------------------
+
+	/**
+	 * Generate an SHA1 Hash
+	 *
+	 * @access	public
+	 * @param	string
+	 * @return	string
+	 */
+	function sha1($str)
+	{
+		if ( ! function_exists('sha1'))
+		{
+			if ( ! function_exists('mhash'))
+			{
+				require_once(BASEPATH.'libraries/Sha1'.EXT);
+				$SH = new CI_SHA;
+				return $SH->generate($str);
+			}
+			else
+			{
+				return bin2hex(mhash(MHASH_SHA1, $str));
+			}
+		}
+		else
+		{
+			return sha1($str);
+		}
+	}
 
 }
