@@ -1,12 +1,10 @@
-    <!-- Bootstrap -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/static/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="/static/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/login.css" rel="stylesheet" type="text/css"/>
+	<link rel="shortcut icon" href="/static/image/favicon.ico" />
