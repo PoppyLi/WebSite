@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends Admin_Controller {
+class Login extends Base_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('manager_model','manager');
@@ -29,7 +29,7 @@ class Login extends Admin_Controller {
 				$this->manager->set_login($mid);
 
 				// 记住登录 1 周
-				if ($this->input->post('rember')) {
+				if ($this->input->post('remember')) {
 
 					$rember_hours = $this->mcfg_get('adminer','rember_hours');
 					if (!is_numeric($rember_hours)) {
@@ -43,14 +43,7 @@ class Login extends Admin_Controller {
 						'expire' => 60*60*$rember_hours,
 						'path'   => $this->config->item('cookie_path'),
 						);
-					$cookie2 = array(
-						'name'   => '_m',
-						'value'  => $mid,
-						'expire' => 60*60*$rember_hours,
-						'path'   => $this->config->item('cookie_path'),
-						);
 					$this->input->set_cookie($cookie);
-					$this->input->set_cookie($cookie2);
 			}
 
 
@@ -119,6 +112,16 @@ class Login extends Admin_Controller {
 				return FALSE;
 			}			
 		}
+	}
+
+	//退出登录
+	public function logout()
+	{
+		$this->logs->add('login','manager ID '.$this->session->userdata('mid').': 退出登录！');
+		$this->session->sess_destroy();
+		$this->load->helper('cookie');
+		delete_cookie('_rember');
+		redirect(site_url('admin/login'));
 	}
 	
 	//密码md5加密

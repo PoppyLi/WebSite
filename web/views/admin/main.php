@@ -29,17 +29,17 @@
 						</div>
 					</form>
 				</li>
-				<li class="start active ">
+				<li class="">
 					<a href="<?php echo site_url('admin/main');?>">
 						<i class="icon-home"></i> 
 						<span class="title">首页信息</span>
 						<span class="selected"></span>
 					</a>
 				</li>
-                <li class="">
+                <li class="start active">
 					<a href="javascript:;">
                       <i class="icon-sitemap"></i>
-                      <span class="title">菜单管理</span>
+                      <span class="title">栏目管理</span>
                       <span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
@@ -50,7 +50,7 @@
 				<li class="">
 					<a href="javascript:;">
                       <i class="icon-briefcase"></i> 
-                      <span class="title">页面管理</span>
+                      <span class="title">表单数据</span>
                       <span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
@@ -61,12 +61,12 @@
 				<li class="">
 					<a href="javascript:;">
                       <i class="icon-file-text"></i> 
-                      <span class="title">文章管理</span>
+                      <span class="title">内容管理</span>
                       <span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li><a href="ui_general.html">所有页面</a></li>
-						<li><a href="ui_buttons.html">新建页面</a></li>
+						<li><a href="ui_general.html">模块列表</a></li>
+						<li><a href="ui_buttons.html">栏目列表</a></li>
 					</ul>
 				</li>
                 <li class="">
@@ -76,28 +76,19 @@
                       <span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li><a href="ui_general.html">所有页面</a></li>
-						<li><a href="ui_buttons.html">新建页面</a></li>
-					</ul>
-				</li>
-                <li class="">
-					<a href="javascript:;">
-                      <i class="icon-picture"></i>  
-                      <span class="title">图片管理</span>
-                      <span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li><a href="ui_general.html">所有页面</a></li>
-						<li><a href="ui_buttons.html">新建页面</a></li>
+						<li><a href="ui_general.html">账号管理</a></li>
+						<li><a href="ui_buttons.html">权限管理</a></li>
+						<li><a href="ui_buttons.html">用户组</a></li>
 					</ul>
 				</li>
                 <li class="">
                 	<a href="<?php echo site_url('admin/main');?>">
 						<i class="icon-cogs"></i>
-						<span class="title">站点设置</span>
+						<span class="title">系统管理</span>
 						<span class="arrow "></span>
 					</a>
                     <ul class="sub-menu">
+                    	<li><a href="ui_general.html">站点设置</a></li>
 						<li><a href="ui_general.html">查看日志</a></li>
 						<li><a href="ui_buttons.html">数据备份</a></li>
 					</ul>

@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Main extends Admin_Controller {
+class Main extends Base_Controller{
 	function __construct(){
 		parent::__construct();
 		
 	}
 
 	public function index(){
-				
 		$this->load->view('admin/main');
 	}
 }

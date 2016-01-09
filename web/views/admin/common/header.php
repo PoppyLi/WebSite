@@ -17,7 +17,7 @@
                         <li><a href="extra_profile.html"><i class="icon-user"></i> 用户信息</a></li>
                         <li class="divider"></li>
                         <li><a href="extra_lock.html"><i class="icon-key"></i> 修改密码</a></li>
-                        <li><a href="login.html"><i class="icon-signout"></i> 退出</a></li>
+                        <li><a href="<?php echo site_url('admin/login/logout');?>"><i class="icon-signout"></i> 退出</a></li>
                     </ul>
                 </li>
             </ul>
