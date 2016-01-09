@@ -498,3 +498,15 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+// 会话 Session Variables
+$config['sess_cookie_name']		= 'session_adminer';
+$config['sess_expiration']		= 7200; # 持续时间
+$config['sess_expire_on_close']	= true; # 关闭浏览器时注销
+$config['sess_encrypt_cookie']	= false; # 使用加密 cookie
+$config['sess_use_database']	= true; # 保存操到数据库
+$config['sess_table_name']		= 'sessions_adminer'; # 数据表
+$config['sess_match_ip']		= FALSE;
+$config['sess_match_useragent']	= TRUE;
+$config['sess_time_to_update']	= 300;  # s 更新时间

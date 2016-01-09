@@ -282,8 +282,11 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder);
 
-/*默认时期设置 by Li.*/
-date_default_timezone_set ("Asia/Shanghai");
+	/*默认时期设置 by Li.*/
+	date_default_timezone_set ("Asia/Shanghai");
+	
+	define('ROOT'        , dirname(__FILE__).'/');
+	define('UPLOAD_PATH' , ROOT.'upload/');
 
 /*
  * --------------------------------------------------------------------

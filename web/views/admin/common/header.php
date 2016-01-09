@@ -10,7 +10,7 @@
                 <li class="dropdown user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img alt="" src="/static/image/avatar1_small.jpg" />
-                    <span class="username">Bob Nilson</span>
+                    <span class="username"><?php echo $this->session->userdata('uname');?></span>
                     <i class="icon-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">

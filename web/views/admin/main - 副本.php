@@ -29,14 +29,14 @@
 						</div>
 					</form>
 				</li>
-				<li class="start active">
+				<li class="">
 					<a href="<?php echo site_url('admin/main');?>">
 						<i class="icon-home"></i> 
 						<span class="title">首页信息</span>
 						<span class="selected"></span>
 					</a>
 				</li>
-                <li class="">
+                <li class="start active">
 					<a href="javascript:;">
                       <i class="icon-sitemap"></i>
                       <span class="title">栏目管理</span>
@@ -104,8 +104,10 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home"></i>
-								<a href="index.html">首页</a>
+								<a href="index.html">Home</a> 
+								<i class="icon-angle-right"></i>
 							</li>
+							<li><a href="#">Dashboard</a></li>
 						</ul>
 					</div>
 					<div class="row-fluid">
@@ -116,26 +118,16 @@
 									<div class="tools"><a href="javascript:;" class="collapse"></a></div>
 								</div>
 								<div class="portlet-body">
-									<table class="table table-striped table-bordered table-advance table-hover">
-										<tbody>
-											<tr>
-												<td>用户名：</td>
-												<td><?php echo $this->session->userdata('uname'); ?></td>
-											</tr>
-											<tr>
-												<td>用户组：</td>
-												<td><?php echo $user_group;?></td>
-											</tr>
-											<tr>
-												<td>登录IP：</td>
-												<td><?php echo $this->session->userdata('login_ip'); ?></td>
-											</tr>
-											<tr>
-												<td>最后活动时间：</td>
-												<td><?php echo date('Y-m-d H:i:s',$this->session->userdata('last_activity'));?></td>
-											</tr>
-										</tbody>
-									</table>
+									<dl>
+										<dt>用户名:</dt>
+										<dd>A description list is perfect for defining terms.</dd>
+										<dt>用户组：</dt>
+										<dd>V</dd>
+										<dt>登录IP：</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+										<dt>最后活动时间:</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+									</dl>
 								</div>
 							</div>
 						</div>
@@ -146,30 +138,18 @@
 									<div class="tools"><a href="javascript:;" class="collapse"></a></div>
 								</div>
 								<div class="portlet-body">
-									<table class="table table-striped table-bordered table-advance table-hover">
-											<tbody>
-												<tr>
-													<td>服务器地址：</td>
-													<td><?php echo $server_add?></td>
-												</tr>
-												<tr>
-													<td>服务器端口：</td>
-													<td><?php echo $server_port?></td>
-												</tr>
-												<tr>
-													<td>缓存是否可写：</td>
-													<td><?php echo $cache_enable?></td>
-												</tr>
-												<tr>
-													<td>上传是否可写:</td>
-													<td><?php echo $upload_enable?></td>
-												</tr>
-												<tr>
-													<td>上传大小限制:</td>
-													<td><?php echo $upload_size?></td>
-												</tr>
-											</tbody>
-									</table>
+									<dl>
+										<dt>服务器地址:</dt>
+										<dd>A description list is perfect for defining terms.</dd>
+										<dt>服务器端口：</dt>
+										<dd>V</dd>
+										<dt>./cache/可写：</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+										<dt>upload/可写:</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+										<dt>上传大小限制:</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+									</dl>
 								</div>
 							</div>
 						</div>
@@ -180,7 +160,32 @@
 									<div class="tools"><a href="javascript:;" class="collapse"></a></div>
 								</div>
 								<div class="portlet-body">
-									站点建设中。。。。。
+									<table class="table">
+										<tr>
+											<td>服务器地址:</td>
+											<td class="text-left">111</td>
+										</tr>
+									</table>
+									<dl class="dl-horizontal">
+										<dt>服务器地址:</dt>
+										<dd>A description list is perfect for defining terms.</dd>
+									</dl>
+									<dl class="dl-horizontal">
+										<dt>服务器端口：</dt>
+										<dd>V</dd>
+									</dl>
+									<dl class="dl-horizontal">
+										<dt>./cache/可写：</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+									</dl>
+									<dl class="dl-horizontal">
+										<dt>upload/可写:</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+									</dl>
+									<dl class="dl-horizontal">
+										<dt>上传大小限制:</dt>
+										<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+									</dl>
 								</div>
 							</div>
 						</div>
