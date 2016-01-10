@@ -17,7 +17,7 @@ class Log_model extends MY_Model{
 		$this->db->set('category',$category);
 		$this->db->set('message',$message);
 		$this->db->set('message',$message);
-		$this->db->set('ip',$this->input->ip_address());
+		$this->db->set('ip',get_ip());
 		if ($this->session->userdata('mid')) {
 			$this->db->set('mid',$this->session->userdata('mid'));
 		}
@@ -25,7 +25,7 @@ class Log_model extends MY_Model{
 		$this->db->insert('log');
 	}
 
-	public function get_list($limit=5,$start=0,$order=false,$where=false){
+	public function get_list($limit=5,$start=0,$order=false,$where=false,$fields="*",$table=FALSE){
 		$this->db
 			->select('log.id,controller,url,category,message,mid,m.nickname as name,ip,timeline')
 			->from('log')
@@ -65,5 +65,4 @@ class Log_model extends MY_Model{
 		return $query->result_array();
 
 	}
-
 }

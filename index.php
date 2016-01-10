@@ -282,11 +282,24 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder);
 
+	# 全局URL路径
+	// 主域名 保留最后的 /
+	define('GLOBAL_URL'  , 'http://'.$_SERVER['HTTP_HOST'].'/'); 
+	// 提供给后台做链接用的
+	define('SITE_URL'  ,   GLOBAL_URL.'index.php/'); 
+	define('STATIC_URL'  , GLOBAL_URL.'static/');
+	define('UPLOAD_URL'  , GLOBAL_URL.'upload/');
+	define('ADMINER_URL' , GLOBAL_URL.'admin/');
+
 	/*默认时期设置 by Li.*/
 	date_default_timezone_set ("Asia/Shanghai");
 	
 	define('ROOT'        , dirname(__FILE__).'/');
+	define('LIBS_PATH'   , ROOT.'web/');
+	define('CI_PATH'     , ROOT.'frame/');
+	define('STATIC_PATH' , ROOT.'static/');
 	define('UPLOAD_PATH' , ROOT.'upload/');
+	define('ADMINER_PATH' ,'admin/');
 
 /*
  * --------------------------------------------------------------------

@@ -67,7 +67,7 @@ class Configs_model extends MY_Model {
 	}
 
 	// 对 MY_Model->create 重写
-	public function create($category,$key,$value)
+	public function create($category,$key=false,$value=false)
 	{
 		if ($this->db->having(array("category ="=>$category,"key ="=>$key))) {
 			return false;

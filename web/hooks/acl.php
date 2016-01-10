@@ -16,8 +16,8 @@ class Acl {
 
 	// hook
 	public function auth(){
+		$url_param = urlencode(current_url().'?'.$_SERVER['QUERY_STRING']);
 		// 没有 session 时
-		
 		if (!$this->CI->session->userdata('gid')) {
 			//检测cookie
 			if ($this->CI->input->cookie('_rember')) {

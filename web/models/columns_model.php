@@ -74,7 +74,7 @@ class Columns_Model extends MY_Model{
 	 * @param  boolean $where 额外条件
 	 * @return int           影响数
 	 */
-	public function del($ids,$where=FALSE){
+	public function del($ids,$where=FALSE,$table=FALSE){
 		if (is_numeric($ids)) {
 			$this->db->where(array('id'=>$where));
 		}

@@ -14,8 +14,6 @@
 
 <body class="page-header-fixed">
 	<?php $this->load->view('admin/common/header');?>
-	<div class="page-container">
-		<?php $this->load->view('admin/common/menu')?>        
 		<div class="page-content">       
 			<div class="container-fluid">
 				<div class="row-fluid">
@@ -27,7 +25,6 @@
 								<a href="index.html">首页</a> 
 								<i class="icon-angle-right"></i>
 							</li>
-
 							<li>
 								<a href="#">账号管理</a>
 								<i class="icon-angle-right"></i>
@@ -39,28 +36,29 @@
 				<div class="row-fluid">			
 					<div class="clearfix">
 							<button class="btn green">添加新用户 <i class="icon-plus"></i></button>
-					</div>
-
+					</div>									
 					<table class="table table-striped table-hover table-bordered">
 						<thead>
 							<tr>
 								<th>账号</th>
 								<th>名称</th>
 								<th>用户组</th>
-								<th>登录</th>
+								<th>登录IP</th>
 								<th>最近登录</th>
 								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody>
+						<?php foreach ($list as $v) { ?>
 							<tr class="">
-								<td>alex</td>
-								<td>Alex Nilson</td>
-								<td>1234</td>
-								<td class="center">power user</td>
-								<td></td>
+								<td><?php echo $v['uname']?></td>
+								<td><?php echo $v['nickname']?></td>
+								<td><?php echo $v['groupname']?></td>
+								<td><?php echo $v['login_today']?></td>
+								<td><?php echo $v['login_time']?></td>
 								<td class="span2"><a class="edit" href="javascript:;">编辑</a>    <a class="delete" href="javascript:;">删除</a></td>
-							</tr>					
+							</tr>
+						<?php }?>					
 						</tbody>
 					</table>
 				</div>					
@@ -68,11 +66,5 @@
 		</div>
 	</div>    
 	<?php $this->load->view('admin/common/footer');?>
-	<script>
-		jQuery(document).ready(function() { 
-		   App.init();
-		   TableEditable.init();
-		});
-	</script>
 </body>
 </html>

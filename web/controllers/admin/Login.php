@@ -3,20 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends Base_Controller{
 	function __construct(){
-		parent::__construct();
-		$this->load->model('manager_model','manager');
-		$this->load->model('configs_model','configs');	
-		$this->load->model('log_model','logs');
-		
-		$this->load->helper('form');		
-		$this->load->library('form_validation');		
+		parent::__construct();	
 	}
 
 	public function index(){
 		$state = $this->form_validation->run('login');
 		if($state == TRUE){
 			$mid = $this->uname; 
-			$info = $this->manager->get_login($mid);
+			$info = $this->mmger->get_login($mid);
 			$session = array(
 					"mid" => $mid,
 					"uname" => $info['uname'],
@@ -26,7 +20,7 @@ class Login extends Base_Controller{
 					);
 
 				$this->session->set_userdata($session);
-				$this->manager->set_login($mid);
+				$this->mmger->set_login($mid);
 
 				// 记住登录 1 周
 				if ($this->input->post('remember')) {
@@ -47,7 +41,7 @@ class Login extends Base_Controller{
 			}
 
 
-			$this->logs->add('login','manager ID '.$this->session->userdata('mid').': 登录成功！');
+			$this->mlogs->add('login','manager ID '.$this->session->userdata('mid').': 登录成功！');
             if ($this->input->get('url')) {
                 redirect(urldecode($this->input->get('url')));
             }else{
@@ -61,7 +55,7 @@ class Login extends Base_Controller{
 	// 验证uname是否存在
 	public function uname_check($str = "")
 	{
-		if ($str and $mid = $this->manager->find_name($str)) {
+		if ($str and $mid = $this->mmger->find_name($str)) {
 			$this->uname = $mid;
 			return TRUE;
 		}else{
@@ -80,7 +74,7 @@ class Login extends Base_Controller{
 		}
 		// 帐号存在则过
 		if ($mid = $this->uname) {
-			$info = $this->manager->get_login($mid);
+			$info = $this->mmger->get_login($mid);
 			
 			// 获取禁用登录时间
 			$forbidden_hours = $this->mcfg_get('adminer','forbidden_hours');
@@ -93,12 +87,12 @@ class Login extends Base_Controller{
 					$this->form_validation->set_message('passwd', '这个输入密码次错误数超过，请于'.$forbidden_hours.'小时后登录！<br/>即：于 '.date('Y-m-d H:i:s',$info['login_time']+60*60*$forbidden_hours).' 之后登录' );;
 					return FALSE;
 				}else{
-					$this->model->set_pwderr($mid,true);
+					$this->mmger->set_pwderr($mid,true);
 				}
 			}		
 			
 			if ($this->encrypt($pwd,$info['uname']) == $info['pwd']) {
-				if ($info_group = $this->manager->get_group($info['gid'])) {
+				if ($info_group = $this->mmger->get_group($info['gid'])) {
 					$gname = $info_group['title'];
 					$gpurview = $info_group['purview'];
 				}else{
@@ -107,7 +101,7 @@ class Login extends Base_Controller{
 				}				
 				return TRUE;
 			}else{
-				$this->manager->set_pwderr($mid);
+				$this->mmger->set_pwderr($mid);
 				$this->form_validation->set_message('passwd', '密码有误,请重新登录！');
 				return FALSE;
 			}			
@@ -117,7 +111,7 @@ class Login extends Base_Controller{
 	//退出登录
 	public function logout()
 	{
-		$this->logs->add('login','manager ID '.$this->session->userdata('mid').': 退出登录！');
+		$this->mlogs->add('login','manager ID '.$this->session->userdata('mid').': 退出登录！');
 		$this->session->sess_destroy();
 		$this->load->helper('cookie');
 		delete_cookie('_rember');
@@ -133,6 +127,6 @@ class Login extends Base_Controller{
 	
 	//获取设置信息
 	public function mcfg_get($category,$key){
-		$this->configs->get($category,$key);	
+		$this->mcfg->get($category,$key);	
 	}
 }

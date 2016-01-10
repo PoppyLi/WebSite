@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Main extends Base_Controller{
+class Main extends CRUD_Controller{
 	function __construct(){
 		parent::__construct();
 		
 	}
 
-	public function index(){
+	public function index($page=1){
 		$arr = array();
 		$this->load->model('manager_model','mag');
 		$info = $this->mag->get_group($this->session->userdata('gid'));
@@ -27,6 +27,10 @@ class Main extends Base_Controller{
         if(new_is_writeable(APPPATH.'cache')) {
             $arr['cache_enable'] = "OK"; 
         }
+        
+        $str = explode('_', $this->uri->segment(2,0));
+		$arr['url'] = $this->uri->segment(2,0);
+		$arr['ch_url'] = $str[0];
 
 		$this->load->view('admin/main',$arr);
 	}
