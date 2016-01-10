@@ -39,7 +39,7 @@
                     </div>
                 </form>
             </li>
-            <li class="<?php echo ($url=='main')?'start active':'';?>">
+            <li class="<?php echo ($ch_url=='main')?'start active':'';?>">
                 <a href="<?php echo site_url('admin/main');?>">
                     <i class="icon-home"></i> 
                     <span class="title">首页信息</span>
@@ -79,16 +79,16 @@
                     <li><a href="ui_buttons.html">栏目列表</a></li>
                 </ul>
             </li>
-            <li class="<?php echo ($url=='manager')?'active':'';?>">
+            <li class="<?php echo ($ch_url=='manager')?'active':'';?>">
                 <a href="javascript:;">
                   <i class="icon-user"></i>  
                   <span class="title">账号管理</span>
                   <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="<?php echo site_url('')?>">用户组</a></li>
-                    <li class="<?php echo ($ch_url=='manager')?'active':'';?>"><a href="<?php echo site_url('admin/manager')?>">用户管理</a></li>
-                    <li><a href="<?php echo site_url('')?>">权限管理</a></li>                     
+                    <li class="<?php echo ($url=='manager_group')?'active':'';?>"><a href="<?php echo site_url('admin/manager_group')?>">用户组</a></li>
+                    <li class="<?php echo ($url=='manager')?'active':'';?>"><a href="<?php echo site_url('admin/manager')?>">用户管理</a></li>
+                    <li class="<?php echo ($url=='manager_purview')?'active':'';?>"><a href="<?php echo site_url('admin/manager_purview')?>">权限管理</a></li>                     
                 </ul>
             </li>
             <li class="">

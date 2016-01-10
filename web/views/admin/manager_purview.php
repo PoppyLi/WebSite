@@ -29,36 +29,28 @@
 								<a href="#">账号管理</a>
 								<i class="icon-angle-right"></i>
 							</li>
-							<li><a href="#">用户管理</a></li>
+							<li><a href="#">权限管理</a></li>
 						</ul>
 					</div>
 				</div>				
 				<div class="row-fluid">			
 					<div class="clearfix">
-							<a href="<?php echo site_url('admin/manager/create'); ?>" class="btn green" ><i class="icon-plus"></i> 用户</a>
+							<a href="<?php echo site_url('admin/manager/create'); ?>" class="btn green" ><i class="icon-plus"></i> 权限</a>
 					</div>									
 					<table class="table table-striped table-hover table-bordered">
 						<thead>
 							<tr>
-								<th>用户</th>
-								<th>名称</th>
-								<th>用户组</th>
-								<th>登录IP</th>
-								<th>最近登录</th>
+								<th>编号</th>
+								<th>用户组名称</th>
 								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody>
-						<?php foreach ($list as $v) { ?>
 							<tr class="">
-								<td><?php echo $v['uname']?></td>
-								<td><?php echo $v['nickname']?></td>
-								<td><?php echo $v['groupname']?></td>
-								<td><?php echo $v['login_today']?></td>
-								<td class="span3"><?php echo date('Y-m-d H:i:s',$v['login_time'])?></td>
-								<td class="span3"><a class="edit" href="javascript:;">编辑</a>    <a class="delete" href="javascript:;">删除</a>    <a class="delete" href="javascript:;">修改密码</a></td>
-							</tr>
-						<?php }?>					
+								<td></td>
+								<td></td>
+								<td class="span3"><a class="edit" href="javascript:;">编辑</a>    <a class="delete" href="javascript:;">删除</a></td>
+							</tr>				
 						</tbody>
 					</table>
 				</div>					
